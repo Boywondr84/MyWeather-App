@@ -6,10 +6,32 @@ header {
     margin: 0 10px 0 10px;
 }
 
+section {
+    border: 2px solid black;
+    margin-right: 1200px;
+    margin-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
 h1 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h2 {
     margin-left: 15px;
+}
+
+input {
+    margin-left: 15px;
+    font-size: 15px;
+    width: 72%;
+}
+
+button {
+    margin-left: 15px;
+    background-color: lightskyblue;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 75%;
 }
