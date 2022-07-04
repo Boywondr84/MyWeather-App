@@ -1,10 +1,10 @@
-var cityInputEl = document.querySelector("city-submit");
+
 
 // get API
 
 var getCity = function(city) {
     // insert API url
-    var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q=Albany&units=imperial&appid=386d421121bbbad42dc1ad82319e7fc0";
+    var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=386d421121bbbad42dc1ad82319e7fc0";
     console.log("testing");
     fetch(requestUrl).then(function (response) {
         // if successful
@@ -12,11 +12,13 @@ var getCity = function(city) {
             response.json().then(function (data) {
                 console.log("working?");
             })
+        } else {
+            alert("Error. City not found.");
         }
     });
 };
 
-getCity();
+// getCity("Albany");
 
 // Form info capture
 var citySearchEl = document.querySelector("#city-search");
@@ -31,7 +33,9 @@ var formSubmitHandler = function(event) {
 if (cityName) {
     getCity(cityName);
     cityNameEl.value = "";
-    console.log(event);
+} else {
+    alert("Please enter a city name.");
 }
+    // console.log(event);
 };
 citySearchEl.addEventListener("submit", formSubmitHandler);
