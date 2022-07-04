@@ -36,7 +36,7 @@ var getCity = function(city) {
 // get lat/lon API
 var getCityNameWithLatLon = function(lat, lon) {
     // insert API url
-    var cityLatLonUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely&appid=386d421121bbbad42dc1ad82319e7fc0";
+    var cityLatLonUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&exclude=minutely&appid=386d421121bbbad42dc1ad82319e7fc0";
     fetch(cityLatLonUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
