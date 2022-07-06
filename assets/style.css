@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     background-color: darkblue;
     color: white;
@@ -10,14 +14,45 @@ header {
     display: flex;
     background-color: lightseagreen;
     width: 100%;
-    margin-top: 20px;
 }
 
 .flex-container div {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: whitesmoke;
-    padding-right: 150px;
     padding-bottom: 30px;
+    margin-left: 15px;
+}
+
+.city-name-container {
+    margin-top: 25px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.city-search {
+
+}
+
+.date-container {
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.future-forecast {
+    
+}
+
+
+/* .flex-container2 {
+    display: flex;
+    width: 100%;
+    margin-top: 35px;
+    background-color: violet;
+} */
+
+.flex-container2 div {
+    padding-bottom: 100px;
+    padding-right: 25%;
 }
 
 section {
@@ -35,6 +70,12 @@ h1 {
 
 h2 {
     margin-left: 15px;
+    font-size: 25px;
+    padding-right: 15px;
+}
+
+h3 {
+    font-size: 20px;
 }
 
 input {
@@ -49,11 +90,10 @@ button {
     color: white;
     font-size: 15px;
     margin-top: 10px;
-    width: 80%;
+    width: 76.5%;
 }
 
-.history {
-    font-size: 20px;
+p {
+    font-size: 25px;
     margin-left: 15px;
-    margin-top: 20px;
 }

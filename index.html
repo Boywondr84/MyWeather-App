@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,21 +17,62 @@
     <div class="flex-container">
         <div>
             <h2>Search for a City:</h2>
-            <form id="city-search">
-            <input name="city-name" id="city-name" type="text" placeholder="Enter City Name">
-            <button type="city-submit">Submit</button>
+            <form class="city-search" id="city-search">
+                <input name="city-name" id="city-name" type="text" placeholder="Enter City Name">
+                <button type="city-submit">Submit</button>
             </form>
         </div>
         <div>
-            <h2>Current Weather Outlook</h2>
+            <h2>Current Weather Outlook For:</h2>
+            <form class="weather-conditions"  id="weather conditions">
+                <div>Temperature</div>
+                <div>Humidity</div>
+                <div>Wind Speed</div>
+                <div>UV Index</div>
         </div>
+        <div class="city-name-container">
+            <div class="city" id="city">
+                <h3></h3>
+            </div>
         </div>
-    <div class="history">
-        <div>History</div>
-        <p id="retrieve city"></p>
+        <div class="date-container">
+            <div class="date" id="date">
+                <h3>Thursday, July 7</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search history">
+        <div>
+            <h2>History:</h2>
+            <p id="retrieve city"></p>
+        </div>
+        <div class="future-forecast">
+            <div class="day1" id="day1"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+            <div class="day">Thurs</div>
+            <div class="temp">Temp: 85&#176; F</div>
+            <div class="wind">Wind: 25MPH</div>
+            <div class="humidity">Humidity: 80%</div>
+            
+            <div class="day2" id="day2"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+            
+            <div class="day3" id="day3"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+            
+            <div class="day4" id="day4"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+            
+            <div class="day5" id="day5"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+        </div>
+        
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
+
 </body>
+
 </html>
