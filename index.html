@@ -25,10 +25,12 @@
         <div>
             <h2>Current Weather Outlook For:</h2>
             <form class="weather-conditions"  id="weather conditions">
-                <div>Temperature</div>
-                <div>Humidity</div>
-                <div>Wind Speed</div>
-                <div>UV Index</div>
+                <div id="temp">Temperature</div>
+                <div id="humidity">Humidity</div>
+                <div id="windSpeed">Wind Speed</div>
+                <div id="UVI">UV Index</div>
+                <div id="w-icon">Icon</div>
+            </form>
         </div>
         <div class="city-name-container">
             <div class="city" id="city">
@@ -45,32 +47,41 @@
     <div class="search history">
         <div>
             <h2>History:</h2>
-            <p id="retrieve city"></p>
+            <p class="retrieve-city" id="retrieve city"></p>
         </div>
         <div class="future-forecast">
-            <div class="day1" id="day1"></div>
+            <div class="day1" id="day-1"></div>
             <img src="" alt="weather-icon" class="weather-icon"></img>
-            <div class="day">Thurs</div>
-            <div class="temp">Temp: 85&#176; F</div>
-            <div class="wind">Wind: 25MPH</div>
-            <div class="humidity">Humidity: 80%</div>
+            <div class="day"></div>
+            <div class="temp" id="temp-1"></div>
+            <div class="wind" id="wind-1"></div>
+            <div class="humidity" id="humidity-1"></div>
             
-            <div class="day2" id="day2"></div>
+            <div class="day2" id="day-2"></div>
+            <img src="" alt="weather-icon" class="weather-icon"></img>
+            <div class="day"></div>
+            <div class="temp" id="temp-2"></div>
+            <div class="wind" id="wind-2"></div>
+            <div class="humidity" id="humidity-2"></div>
+            
+            <div class="day3" id="day-3"></div>
             <img src="" alt="weather-icon" class="weather-icon"></img>
             
-            <div class="day3" id="day3"></div>
+            <div class="day4" id="day-4"></div>
             <img src="" alt="weather-icon" class="weather-icon"></img>
             
-            <div class="day4" id="day4"></div>
-            <img src="" alt="weather-icon" class="weather-icon"></img>
-            
-            <div class="day5" id="day5"></div>
+            <div class="day5" id="day-5"></div>
             <img src="" alt="weather-icon" class="weather-icon"></img>
         </div>
         
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> --> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script> -->
     <script src="./assets/script.js"></script>
 
 </body>
