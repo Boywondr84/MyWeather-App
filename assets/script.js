@@ -69,15 +69,17 @@ var getCityNameWithLatLon = function (lat, lon) {
                 // $("#w-icon").attr("src", "https://api.openweathermap.org/img/wn/" + img + "png");
                 // $("#w-icon").append("img src = "https://api.openweathermap.org/img/wn/" + img + "png");
                 for (var i = 0; i < data.daily.length; i++) {
-                    console.log(data.daily[i].temp.day);
+                    console.log(data.daily[i]);
                     var time = moment(data.daily[i].dt *1000).format("MMMM Do");
                     temp = data.daily[i].temp.day;
-                    wind = data.daily[i].wind;
+                    wind = data.daily[i].wind_speed;
                     humidity = data.daily[i].humidity;
                     // console.log(time);
 
                 $(`#day-${i}`).append("Date: ", time);
-                $(`#temp-${i}`).text(temp + " F");
+                $(`#temp-${i}`).text("Temp: " + temp + " F");
+                $(`#wind-${i}`).text("Wind: " + wind + " MPH");
+                $(`#humidity-${i}`).text("Humidity: " + humidity + " % ");
                 }
             })
         }
@@ -104,22 +106,27 @@ var formSubmitHandler = function (event) {
 
 
     // retrieve city name: placed in history and weather outlook
+        // document.getElementById("retrieve city").textContent =
+        // cityNameHistory = JSON.parse(localStorage.getItem("saved city")) || [];
+    // Load history
+    function loadHistory() {
+        populate = JSON.parse(localStorage.getItem("saved city"));
         
-        document.getElementById("retrieve city").textContent =
-        localStorage.getItem("saved city");
 
-        // cityNameHistory.push("saved city");
+        for (i = 0; i < populate.length; i++) {
+            // cityName = populate[i];
+            // console.log(cityName);
 
-    // // search history: create button, clickable
-    // var cityName = document.createElement('p');
-    // cityName.textContent = cityNameEl.value.trim();
+        // create container
+        var citySearch = document.createElement("p");
+        citySearch.classlist = "retrieve-city"
 
-    // cityContainerEl.append(cityName);
-    // cityNameContainerEl.append(cityName);
-    
-    
+        cityContainerEl.append(cityNameHistory);
+        }
 
-    // // append to History
+    }
+    loadHistory();
+
     // cityContainerEl.append(cityName);
 
 
