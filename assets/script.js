@@ -10,11 +10,13 @@ var cityNameContainerEl = document.getElementById("city");
 var cityNameHistory = [];
 var weatherEl = document.getElementById("weather conditions");
 
+var weatherIcon;
+
 // get Geocoding API
 
 var getCity = function (city) {
     // insert API url
-    var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=386d421121bbbad42dc1ad82319e7fc0";
+    var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=386d421121bbbad42dc1ad82319e7fc0";
     // console.log("testing");
     fetch(requestUrl).then(function (response) {
         // if successful
@@ -50,7 +52,7 @@ var getCityNameWithLatLon = function (lat, lon) {
     fetch(cityLatLonUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                // console.log(data);
+                console.log(data);
                 // console.log(data.current.weather[0].icon);
                 // console.log(data.current.wind_speed);
                 // for (var i = 0; i < data.length; i++) {
@@ -60,14 +62,14 @@ var getCityNameWithLatLon = function (lat, lon) {
                 var humidity = data.current.humidity;
                 var uvi = data.current.uvi;
                 var windSpeed = data.current.wind_speed;
-                var img = data.current.weather[0].icon;
+                var weatherIcon = data.current.weather[0].icon;
 
                 $("#temp").append(" : " + temp + "&#176; F");
                 $("#humidity").append(" : " + humidity + " % ");
                 $("#windSpeed").append(" : " + windSpeed + " MPH ");
                 $("#UVI").append(" : " + uvi);
-                // $("#w-icon").attr("src", "https://api.openweathermap.org/img/wn/" + img + "png");
-                // $("#w-icon").append("img src = "https://api.openweathermap.org/img/wn/" + img + "png");
+                // $("#w-icon").setAttribute("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+                // $("#w-icon").append("img src = 
                 for (var i = 0; i < data.daily.length; i++) {
                     console.log(data.daily[i]);
                     var time = moment(data.daily[i].dt *1000).format("MMMM Do");
@@ -80,6 +82,7 @@ var getCityNameWithLatLon = function (lat, lon) {
                 $(`#temp-${i}`).text("Temp: " + temp + " F");
                 $(`#wind-${i}`).text("Wind: " + wind + " MPH");
                 $(`#humidity-${i}`).text("Humidity: " + humidity + " % ");
+                // $(`#w-icon-${i}`).img("w-icon" + weatherIcon);
                 }
             })
         }
@@ -121,20 +124,18 @@ var formSubmitHandler = function (event) {
         var citySearch = document.createElement("p");
         citySearch.classlist = "retrieve-city"
 
+        // var cityDisplay = document.createElement("h3");
+        // cityDisplay.classlist = "retrieve-city"
+
         cityContainerEl.append(cityNameHistory);
+        
         }
 
     }
     loadHistory();
 
-    // cityContainerEl.append(cityName);
-
-
-
     document.getElementById("city").textContent =
         localStorage.getItem("saved city");
-
-
 
     if (cityName) {
         getCity(cityName);
