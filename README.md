@@ -14,4 +14,4 @@
 - https://boywondr84.github.io/MyWeather-App/
 
 ** Screenshot:
-<img src=".\assets\screenshot.png></img>
+<img src=".\assets\screenshot.png"></img>
