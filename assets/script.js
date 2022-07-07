@@ -10,7 +10,8 @@ var cityNameContainerEl = document.getElementById("city");
 var cityNameHistory = [];
 var weatherEl = document.getElementById("weather conditions");
 
-var weatherIcon;
+var weatherIcon = document.querySelector('.weather-icon');
+// var icon =  document.getElementById('icon').src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
 // get Geocoding API
 
@@ -62,14 +63,16 @@ var getCityNameWithLatLon = function (lat, lon) {
                 var humidity = data.current.humidity;
                 var uvi = data.current.uvi;
                 var windSpeed = data.current.wind_speed;
-                var weatherIcon = data.current.weather[0].icon;
+                var iconCode = data.weather[0].icon;
+                var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
 
                 $("#temp").append(" : " + temp + "&#176; F");
                 $("#humidity").append(" : " + humidity + " % ");
                 $("#windSpeed").append(" : " + windSpeed + " MPH ");
                 $("#UVI").append(" : " + uvi);
-                // $("#w-icon").setAttribute("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
-                // $("#w-icon").append("img src = 
+                // $("#weather-icon").html("<img src='https://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
+                // $("#weather-icon").append("img src = '" + iconUrl + "'>");
+
                 for (var i = 0; i < data.daily.length; i++) {
                     console.log(data.daily[i]);
                     var time = moment(data.daily[i].dt *1000).format("MMMM Do");
@@ -143,7 +146,8 @@ var formSubmitHandler = function (event) {
 
     } else {
         alert("Please enter a city name.");
-    }
+    } 
+    // page reload
     // console.log(event);
 }
 citySearchEl.addEventListener("submit", formSubmitHandler);
